@@ -1,0 +1,741 @@
+{
+  "administrator" : {
+    "components" : {
+      "com_rsform" : {
+        "controller.php" : {
+          "rsfp_bk_onSwitchTasks" : {
+            "line" : 119,
+            "define" : "An entry point for plugins.",
+            "parameters" : []
+          }
+        },
+        "rsform.php" : {
+          "rsfp_bk_onInit" : {
+            "line" : 49,
+            "define" : "As the component starts.",
+            "parameters" : []
+          }
+        },
+        "controllers" : {
+          "forms.php" : {
+            "rsfp_onFormDelete": {
+              "line": 564,
+              "define": "Triggered when the form itself is deleted.",
+              "parameters": [
+                "formId"
+              ]
+            },
+            "rsfp_bk_onFormCopy": {
+              "line": 829,
+              "define": "Triggered when a form is copied.",
+              "parameters": [
+                "formId",
+                "newFormId",
+                "components",
+                "componentRelations"
+              ]
+            }
+          }
+        },
+        "helpers" : {
+          "backup.php" : {
+            "rsfp_bk_onFormBackup": {
+              "line": 130,
+              "define": "Triggered when the form is backed up.",
+              "parameters": [
+                "formId",
+                "&xml"
+              ]
+            }
+          },
+          "quickfields.php" : {
+            "rsfp_onAfterCreateQuickAddPlaceholders": {
+              "line": 90,
+              "define": "Triggered when Quick Placeholders are called.",
+              "parameters": [
+                "&componentPlaceholders",
+                "ComponentTypeId"
+              ]
+            }
+          },
+          "rsform.php" : {
+            "rsfp_onAfterCreatePlaceholders": {
+              "line": 1040,
+              "define": "Triggered after Placehlders are created.",
+              "parameters": [
+                [
+                  {"form" : "&form"},
+                  {"placeholders" : "&placeholders"},
+                  {"values" : "&values"},
+                  {"submission" : "&submission"}
+                ]
+              ]
+            },
+            "rsfp_beforeUserEmail": {
+              "line": 1122,
+              "define": "Before RSFP sends the submission email.",
+              "parameters": [
+                [
+                  {"form" : "&form"},
+                  {"placeholders" : "&placeholders"},
+                  {"values" : "&values"},
+                  {"submissionId" : "SubmissionId"},
+                  {"userEmail" : "&userEmail"}
+                ]
+              ]
+            },
+            "rsfp_beforeAdminEmail": {
+              "line": 1133,
+              "define": "Before sending the Administrator Email with a successful submission.",
+              "parameters": [
+                [
+                  {"form" : "&form"},
+                  {"placeholders" : "&placeholders"},
+                  {"values" : "&values"},
+                  {"submissionId" : "SubmissionId"},
+                  {"adminEmail" : "&adminEmail"}
+                ]
+              ]
+            },
+            "rsfp_beforeAdditionalEmail": {
+              "line": 1202,
+              "define": "Before sending additional emails for the successfully submitted.",
+              "parameters": [
+                [
+                  {"form" : "&form"},
+                  {"placeholders" : "&placeholders"},
+                  {"values" : "&values"},
+                  {"submissionId" : "SubmissionId"},
+                  {"additionalEmail" : "&additionalEmail"}
+                ]
+              ]
+            },
+            "rsfp_f_onBeforeShowForm": {
+              "line": 1325,
+              "define": "Triggered before sending the form to the browser.",
+              "parameters": []
+            },
+            "rsfp_bk_onBeforeCreateFrontComponentBody": {
+              "line": 1495,
+              "define": "Triggered before creating the Component to be displayed.",
+              "parameters": [
+                [
+                  {"out" : "&out"},
+                  {"formId" : "formId"},
+                  {"componentId" : "ComponentId"},
+                  {"data" : "&data"},
+                  {"value" : "&val"}
+                ]
+              ]
+            },
+            "rsfp_bk_onAfterCreateFrontComponentBody": {
+              "line": 1531,
+              "define": "After creating the Component to be sent.",
+              "parameters": [
+                [
+                  {"out" : "&out"},
+                  {"formId" : "formId"},
+                  {"componentId" : "ComponentId"},
+                  {"data" : "data"},
+                  {"value" : "val"},
+                  {"r" : "r"},
+                  {"invalid" : "invalid"}
+                ]
+              ]
+            },
+            "rsfp_f_onInitFormDisplay": {
+              "line": 1571,
+              "define": "Form is created and RSFP is starting to send it to the browser.",
+              "parameters": [
+                [
+                  {"find" : "&find"},
+                  {"replace" : "&replace"},
+                  {"formLayout" : "&formLayout"}
+                ]
+              ]
+            },
+            "rsfp_f_onAJAXScriptCreate": {
+              "line": 1717,
+              "define": "Triggered when RSFP creates a response to AJAX.",
+              "parameters": [
+                [
+                  {"script" : "&ajaxScript"},
+                  {"formId" : "formId"}
+                ]
+              ]
+            },
+            "rsfp_f_onBeforeFormDisplay": {
+              "line": 1821,
+              "define": "Triggered right before sending the form to the browser.",
+              "parameters": [
+                [
+                  {"formLayout" : "&formLayout"},
+                  {"formId" : "formId"},
+                  {"formLayoutName" : "formLayoutName"}
+                ]
+              ]
+            },
+            "rsfp_f_onAfterShowThankyouMessage": {
+              "line": 1863,
+              "define": "Triggered after creating the Thank You message and before queuing it.",
+              "parameters": [
+                [
+                  {"output" : "&output"},
+                  {"formId" : "&formId"}
+                ]
+              ]
+            },
+            "rsfp_f_onBeforeFormValidation": {
+              "line": 1913,
+              "define": "Triggered when validating the form before submission.",
+              "parameters": [
+                [
+                  {"invalid" : "&invalid"},
+                  {"formId" : "formId"},
+                  {"post" : "&_POST"}
+                ]
+              ]
+            },
+            "rsfp_f_onBeforeFormProcess": {
+              "line": 1925,
+              "define": "Before processing the form that was submitted.",
+              "parameters": [
+                [
+                  {"post" : "&_POST"}
+                ]
+              ]
+            },
+            "rsfp_f_onBeforeStoreSubmissions": {
+              "line": 1993,
+              "define": "Before saving the submission to the database.",
+              "parameters": [
+                [
+                  {"formId" : "formId"},
+                  {"post" : "&_POST"},
+                  {"SubmissionId" : "SubmissionId"}
+                ]
+              ]
+            },
+            "rsfp_f_onAfterStoreSubmissions": {
+              "line": 2006,
+              "define": "After saving the submission to the database.",
+              "parameters": [
+                [
+                  {"SubmissionId" : "SubmissionId"},
+                  {"formId" : "formId"}
+                ]
+              ]
+            },
+            "rsfp_f_onAfterFormProcess": {
+              "line": 2281,
+              "define": "After finishing RSFP's form process.",
+              "parameters": [
+                [
+                  {"SubmissionId" : "SubmissionId"},
+                  {"formId" : "formId"}
+                ]
+              ]
+            },
+            "rsfp_onCreateMailer": {
+              "line": 2899,
+              "define": "Triggered when RSFP sends an email.",
+              "parameters": [
+                [
+                  {"mailer" : "&mail"},
+                  {"from" : "&from"},
+                  {"fromname" : "&fromname"},
+                  {"recipient" : "&recipient"},
+                  {"subject" : "&subject"},
+                  {"body" : "&body"},
+                  {"mode" : "&mode"},
+                  {"cc" : "&cc"},
+                  {"bcc" : "&bcc"},
+                  {"attachment" : "&attachment"},
+                  {"replyto" : "&replyto"},
+                  {"replytoname" : "&replytoname"}
+                ]
+              ]
+            }
+          },
+          "backup" : {
+            "form.php" : {
+              "rsfp_onFormBackup": {
+                "line": 71,
+                "define": "Triggered when the form is backed up.",
+                "parameters": [
+                  "this->form",
+                  "this->xml",
+                  "this->fields"
+                ]
+              }
+            }
+          },
+          "fields" : {
+            "fileupload.php" : {
+              "rsfp_f_onAfterFileUpload": {
+                "line": 117,
+                "define": "After the file has been saved this event is triggered.",
+                "parameters": [
+                  [
+                    {"formId" : "this->formId"},
+                    {"fieldname" : "this->name"},
+                    {"file" : "file"},
+                    {"name" : "prefix . actualFile['name']"}
+                  ]
+                ]
+              }
+            }
+          },
+          "restore" : {
+            "form.php" : {
+              "rsfp_onFormRestore": {
+                "line": 83,
+                "define": "During the restore process. You can restore what you want.",
+                "parameters": [
+                  "form",
+                  "xml",
+                  "fields"
+                ]
+              }
+            },
+            "legacy.php" : {
+              "rsfp_bk_onFormRestoreTruncate": {
+                "line": 144,
+                "define": "This allows a plugin to clear their tables.",
+                "parameters": []
+              }
+            },
+            "restore.php" : {
+              "rsfp_bk_onFormRestoreTruncate": {
+                "line": 258,
+                "define": "Just like legacy.php it alows a plugin to clear their tables.",
+                "parameters": []
+              }
+            }
+          }
+        },
+        "layouts" : {
+          "dir-2cols.php" : {
+            "rsfp_b_onManageDirectoriesAfterCreatedPlaceholders": {
+              "line": 31,
+              "define": "Triggered after creating placeholders for directories.",
+              "parameters": [
+                "field",
+                "&placeholders"
+              ]
+            }
+          },
+          "dir-2lines-title.php" : {
+            "rsfp_b_onManageDirectoriesAfterCreatedPlaceholders": {
+              "line": 26,
+              "define": "Triggered after creating placeholders for directories.",
+              "parameters": [
+                "field",
+                "&placeholders"
+              ]
+            }
+          },
+          "dir-2lines.php" : {
+            "rsfp_b_onManageDirectoriesAfterCreatedPlaceholders": {
+              "line": 25,
+              "define": "Triggered after creating placeholders for directories.",
+              "parameters": [
+                "field",
+                "&placeholders"
+              ]
+            }
+          },
+          "dir-inline-title.php" : {
+            "rsfp_b_onManageDirectoriesAfterCreatedPlaceholders": {
+              "line": 26,
+              "define": "Triggered after creating placeholders for directories.",
+              "parameters": [
+                "field",
+                "&placeholders"
+              ]
+            }
+          },
+          "dir-ineline.php" : {
+            "rsfp_b_onManageDirectoriesAfterCreatedPlaceholders": {
+              "line": 25,
+              "define": "Triggered after creating placeholders for directories.",
+              "parameters": [
+                "field",
+                "&placeholders"
+              ]
+            }
+          }
+        },
+        "models" : {
+          "conditions.php" : {
+            "rsfp_bk_onCreateConditionOptionFields": {
+              "line": 67,
+              "define": "Triggered when creating a conditional field.",
+              "parameters": [
+                [
+                  {"types" : "&types"},
+                  {"formId" : "formId"}
+                ]
+              ]
+            },
+            "rsfp_bk_onCreateConditionOptionFieldItem": {
+              "line": 111,
+              "define": "Triggered when creating a conditional field item",
+              "parameters": [
+                [
+                  {"field" : "&optionField"},
+                  {"item" : "&item"},
+                  {"formId" : "formId"}
+                ]
+              ]
+            }
+          },
+          "directory.php" : {
+            "rsfp_onAfterCreateQuickAddPlaceholders": {
+              "line": 377,
+              "define": "Triggered when quick add placerholders are called.",
+              "parameters": [
+                "&placeholders",
+                "ComponentTypeId"
+              ]
+            }
+          },
+          "forms.php" : {
+            "rsfp_bk_onBeforeCreateComponentPreview": {
+              "line": 295,
+              "define": "Triggered before Creating a Component Preview (After you have added it to the form.)",
+              "parameters": [
+                [
+                  {"out" : "&out"},
+                  {"formId" : "formId"},
+                  {"componentId" : "componentId"},
+                  {"ComponentTypeName" : "r['ComponentTypeName']"},
+                  {"data" : "data"}
+                ]
+              ]
+            },
+            "rsfp_bk_onAfterCreateComponentPreview": {
+              "line": 328,
+              "define": "After creating the preview of the component for the form builder.",
+              "parameters": [
+                [
+                  {"out" : "&out"},
+                  {"formId" : "formId"},
+                  {"componentId" : "componentId"},
+                  {"ComponentTypeName" : "r['ComponentTypeName']"},
+                  {"data" : "data"}
+                ]
+              ]
+            },
+            "rsfp_onFormSave": {
+              "line": 642,
+              "define": "Triggered when the form saves.",
+              "parameters": [
+                "&form"
+              ]
+            }
+          },
+          "submissions.php" : {
+            "rsfp_b_onManageSubmissions": {
+              "line": 351,
+              "define": "Triggered when you go to manage the submissions in the back end.",
+              "parameters": [
+                [
+                  {"formId" : "formId"},
+                  {"submissions" : "&this->_data"},
+                  {"export" : "this->export"},
+                  {"escape" : "must_escape"}
+                ]
+              ]
+            },
+            "rsfp_b_onManageSubmissionsCreateUnescapedFields": {
+              "line": 410,
+              "define": "Triggered when unescaped fields are created.",
+              "parameters": [
+                [
+                  {"formId" : "this->getFormId()"},
+                  {"fields" : "&fields"}
+                ]
+              ]
+            }
+          }
+        },
+        "views" : {
+          "configuration" : {
+            "tmpl" : {
+              "default.php" : {
+                "rsfp_bk_onAfterShowConfigurationTabs": {
+                  "line": 31,
+                  "define": "This event is where you add a configuration display.",
+                  "parameters": [
+                    "this->tabs"
+                  ]
+                }
+              }
+            }
+          },
+          "directory" : {
+            "tmpl" : {
+              "edit_fields.php" : {
+                "rsfp_on_b_ManageDirectoriesDecideEditable": {
+                  "line": 36,
+                  "define": "When editing a Submission this will provide you the option to hide a field.",
+                  "parameters": [
+                    "&fields"
+                  ]
+                }
+              }
+            }
+          },
+          "forms" : {
+            "tmpl" : {
+              "edit.php" : {
+                "rsfp_bk_onAfterShowFormDesignTabsTab": {
+                  "line": 43,
+                  "define": "When editing a form Design Tabs Tab is displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormFormTabsTab": {
+                  "line": 48,
+                  "define": "When editing a form Form Tabs Tab are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormEmailsTabsTab": {
+                  "line": 53,
+                  "define": "When editing the Email Tabs Tab are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormScriptsTabsTab": {
+                  "line": 57,
+                  "define": "When editing the Scripts Tabs Tab are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormEditTabsTab": {
+                  "line": 63,
+                  "define": "When editing the Edit Tabs Tab are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormDesignTabs": {
+                  "line": 76,
+                  "define": "When editing the Edit Tabs are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormFormTabs": {
+                  "line": 86,
+                  "define": "When editing the Form Tabs are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormEmailsTabs": {
+                  "line": 96,
+                  "define": "When editing the Emails Tabs are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormScriptsTabs": {
+                  "line": 103,
+                  "define": "When editing the Scripts Tabs are displayed then this is triggered.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowFormEditTabs": {
+                  "line": 116,
+                  "define": "When editing the Edit Tabs are displayed then this is triggered.",
+                  "parameters": []
+                }
+              },
+              "edit_admin.php" : {
+                "rsfp_bk_onAfterShowAdminEmail": {
+                  "line": 70,
+                  "define": "Triggered after sending Admin Email to the browser",
+                  "parameters": []
+                }
+              },
+              "edit_components.php" : {
+                "rsfp_onBeforeShowComponents": {
+                  "line": 11,
+                  "define": "Triggered before the component list is created.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowStandardComponents": {
+                  "line": 28,
+                  "define": "Triggered after displaying the top section of the builder components.",
+                  "parameters": []
+                },
+                "rsfp_bk_onAfterShowComponents": {
+                  "line": 35,
+                  "define": "RSFP has finished displaying components for the form builder.",
+                  "parameters": []
+                }
+              },
+              "edit_user.php" : {
+                "rsfp_bk_onAfterShowUserEmail": {
+                  "line": 93,
+                  "define": "Triggered after the user email script is displayed.",
+                  "parameters": []
+                }
+              }
+            }
+          },
+          "submissions" : {
+            "view.pdf.php" : {
+              "rsfp_onPDFView" : {
+                "line" : 28,
+                "define" : "When viewing the PDF",
+                "parameters" : [
+                  "content",
+                  "files"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "com_rsform" : {
+      "controller.php" : {
+        "rsfp_f_onSwitchTasks" : {
+          "line" : 27,
+          "define" : "Happen during a function called during by controller::plugin",
+          "parameters" : null
+        },
+        "rsfp_f_onBeforeFormValidation" : {
+          "line" : 135,
+          "define" : "Happens before submitting to ensure the form is ready.",
+          "parameters" : [
+            [
+              { "invalid" : "&invalid"},
+              {"formId" : "formId"},
+              {"post" : "&_POST[form]"}
+            ]
+          ]
+        },
+        "rsfp_f_onSubmissionConfirmation" : {
+          "line" : 207,
+          "define" : "Happens on successful submission.",
+          "parameters" : [
+            [
+              {"SubmissionId" : "SubmissionId"},
+              {"hash" : "hash"}
+            ]
+          ]
+        },
+        "rsfp_f_onSubmissionDeletion" : {
+          "line" : 237,
+          "define" : "Happens on successful deletion of submission.",
+          "parameters" : [
+            [
+              {"SubmissionId" : "SubmissionId"},
+              {"hash" : "hash"}
+            ]
+          ]
+        }
+      },
+      "router.php" : {
+        "rsfp_onBeforeFormBuildRoute" : {
+          "line" : 14,
+          "define" : "Before RSForm! Pro checks URL request.",
+          "parameters" : [
+            "&segments",
+            "&query"
+          ]
+        },
+        "rsfp_onAfterFormBuildRoute" : {
+          "line" : 138,
+          "define" : "After RSForm! Pro checks URL request.",
+          "parameters" : [
+            "&segments",
+            "&query"
+          ]
+        },
+        "rsfp_onBeforeFormParseRoute" : {
+          "line" : 147,
+          "define" : "Before parsing the URL request (Which files to use.)",
+          "parameters" : [
+            "&segments",
+            "&query"
+          ]
+        },
+        "rsfp_onAfterFormParseRoute" : {
+          "line" : 191,
+          "define" : "After parsing the URL request (Which files to use.)",
+          "parameters" : [
+            "&segments",
+            "&query"
+          ]
+        }
+      },
+      "models" : {
+        "directory.php" : {
+          "rsfp_onAfterManageDirectoriesQuery" : {
+            "line" : 238,
+            "define" : "After running the SQL SELECT Query to display current submissions",
+            "parameters" : [
+              "&items",
+              "formId"
+            ]
+          },
+          "rsfp_b_onManageDirectoriesCreateUnescapedFields" : {
+            "line" : 269,
+            "define" : "Allows you to add fields",
+            "parameters" : [
+              [
+                {"fields" : "&unescapedFields"},
+                {"formId" : "formId"}
+              ]
+            ]
+          },
+          "rsfp_f_onBeforeDirectorySave" : {
+            "line" : 463,
+            "define" : "Before saving the directory you are editing.",
+            "parameters" : [
+              [
+                {"SubmissionId" : "&SubmissionId"},
+                {"formId" : "formId"},
+                {"post" : "_POST[form]"}
+              ]
+            ]
+          },
+          "rsfp_beforeDirectoryEmail" : {
+            "line" : 647,
+            "define" : "Before sending the directory script ",
+            "parameters" : [
+              [
+                {"directory" : "&directory"},
+                {"placeholders" : "&placeholders"},
+                {"values" : "&values"},
+                {"submissionId" : "SubmissionId"},
+                {"directoryEmail" : "&directoryEmail"}
+              ]
+            ]
+          }
+        }
+      },
+      "views" : {
+        "directory" : {
+          "view.pdf.php" : {
+            "rsfp_onPDFView" : {
+              "line" : 49,
+              "define" : "When displaying the pdf it ",
+              "parameters" : [
+                "contents",
+                "filename"
+              ]
+            }
+          }
+        },
+        "submissions" : {
+          "view.pdf.php" : {
+            "rsfp_onPDFView" : {
+              "line" : 27,
+              "define" : "When displaying the pdf it ",
+              "parameters" : [
+                "contents",
+                "filename"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
